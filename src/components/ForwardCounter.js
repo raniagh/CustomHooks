@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-
-import Card from './Card';
+import useCounter from "../hooks/use-counter";
+import Card from "./Card";
 
 const ForwardCounter = () => {
-  const [counter, setCounter] = useState(0);
+  //A shared logic
+  /* const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -11,8 +11,10 @@ const ForwardCounter = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, []); */
 
+  //Call to useCounter custom hook
+  const counter = useCounter();
   return <Card>{counter}</Card>;
 };
 
